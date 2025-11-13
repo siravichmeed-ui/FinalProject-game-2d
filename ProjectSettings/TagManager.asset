@@ -12,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -48,14 +48,17 @@ TagManager:
   - name: 1
     uniqueID: 2531247645
     locked: 0
+  - name: BackStuff
+    uniqueID: 2258814579
+    locked: 0
+  - name: Water
+    uniqueID: 1126408965
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Grass
     uniqueID: 1577728853
-    locked: 0
-  - name: Water
-    uniqueID: 1126408965
     locked: 0
   m_RenderingLayers:
   - Default

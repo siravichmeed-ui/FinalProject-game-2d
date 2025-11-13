@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int maxHealth = 3;
     public Animator animator;
     public Rigidbody2D rb;
     public float jumpForce = 5f;
@@ -11,15 +12,23 @@ public class Player : MonoBehaviour
     private float movement;
     public float moveSpeed = 5f;
     private bool facingRight = true;
+
+    public Transform attackPoint;
+    public float attackRadius = 1f;
+    public LayerMask attackLayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
-     
+
     // Update is called once per frame
     void Update()
     {
+        if (maxHealth <= 0)
+        {
+            Die();
+        }
         movement = Input.GetAxis("Horizontal");
         if (movement < 0f && facingRight)
         {
@@ -68,5 +77,38 @@ public class Player : MonoBehaviour
             isGrounded = true;
             animator.SetBool("Jump", false);
         }
+    }
+
+    public void Attack()
+    {
+        Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
+        if (collInfo)
+        {
+            if (collInfo.gameObject.GetComponent<Enemy>() != null)
+            {
+                collInfo.gameObject.GetComponent<Enemy>().TakeDamage(2);
+            }
+        }
+    }
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+    }
+    public void TakeDamage(int damage)
+    {
+        if (maxHealth <= 0)
+        {
+            return;
+        }
+        maxHealth -= damage;
+    }
+
+    void Die()
+    {
+        Debug.Log("Die");
     }
 }
