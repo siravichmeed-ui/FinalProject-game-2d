@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 5;
+    [SerializeField] private Health health;
+
     public bool facingLeft = true;
     public float moveSpeed = 2f;
     public Transform checkPoint;
@@ -19,28 +20,37 @@ public class Enemy : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius = 1f;
     public LayerMask attackLayer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
+    void Awake()
+    {
+        if (health == null)
+            health = GetComponent<Health>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        if (health != null)
+            health.OnDied += Die;
+    }
+
+    void OnDestroy()
+    {
+        if (health != null)
+            health.OnDied -= Die;
+    }
+
     void Update()
     {
-        if (maxHealth <= 0)
-        {
-            Die();
-        }
+        if (FindAnyObjectByType<GameManager>().isGameActive == false)
+            return;
+
+        // ถ้าอยากกัน null
+        if (player == null) return;
 
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
             inRange = true;
-        }
         else
-        {
             inRange = false;
-        }
 
         if (inRange)
         {
@@ -68,6 +78,7 @@ public class Enemy : MonoBehaviour
         else
         {
             transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
+
             RaycastHit2D hit = Physics2D.Raycast(checkPoint.position, Vector2.down, distance, layerMask);
             if (hit == false && facingLeft)
             {
@@ -80,10 +91,6 @@ public class Enemy : MonoBehaviour
                 facingLeft = true;
             }
         }
-
-
-
-
     }
 
     public void Attack()
@@ -91,28 +98,24 @@ public class Enemy : MonoBehaviour
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if (collInfo)
         {
-            if (collInfo.gameObject.GetComponent<Player>() != null)
+            Player player = collInfo.gameObject.GetComponent<Player>();
+            if (player != null)
             {
-                collInfo.gameObject.GetComponent<Player>().TakeDamage(1);
-
+                player.TakeDamage(5);
             }
         }
     }
 
     public void TakeDamage(int damage)
     {
-        if (maxHealth <= 0)
-        {
-            return;
-        }
-        maxHealth -= damage;
+        if (health == null) return;
+        health.TakeDamage(damage);
     }
+
     private void OnDrawGizmosSelected()
     {
-        if (checkPoint == null)
-        {
-            return;
-        }
+        if (checkPoint == null) return;
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(checkPoint.position, Vector2.down * distance);
 
@@ -123,9 +126,10 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
+
     void Die()
     {
-        Debug.Log(this.transform.name + "Died.");
+        Debug.Log(this.transform.name + " Died.");
         Destroy(this.gameObject);
     }
 }
