@@ -3,72 +3,94 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Health health;
+    [Header("Components")]
+    [SerializeField] protected Health health;
+    [SerializeField] protected Animator animator;
 
+    [Header("Target")]
+    public Transform player;
+
+    [Header("Move Settings")]
     public bool facingLeft = true;
     public float moveSpeed = 2f;
+    public float chaseSpeed = 4f;
     public Transform checkPoint;
     public float distance = 1f;
     public LayerMask layerMask;
-    public bool inRange = false;
-    public Transform player;
+
+    [Header("Attack Settings")]
+    public int damage = 5;
     public float attackRange = 10f;
     public float retrieveDistance = 2.5f;
-    public float chaseSpeed = 4f;
-    public Animator animator;
 
+    [Header("Melee Hitbox")]
     public Transform attackPoint;
     public float attackRadius = 1f;
     public LayerMask attackLayer;
 
-    void Awake()
+    protected bool inRange = false;
+
+    // ----------------- LIFE CYCLE -----------------
+    protected virtual void Awake()
     {
         if (health == null)
             health = GetComponent<Health>();
+
+        if (animator == null)
+            animator = GetComponent<Animator>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         if (health != null)
             health.OnDied += Die;
     }
 
-    void OnDestroy()
+    protected virtual void OnDestroy()
     {
         if (health != null)
             health.OnDied -= Die;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (FindAnyObjectByType<GameManager>().isGameActive == false)
             return;
 
-        // ถ้าอยากกัน null
         if (player == null) return;
 
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-            inRange = true;
-        else
-            inRange = false;
+        HandleAI();
+    }
+
+    // ----------------- AI LOGIC -----------------
+    protected virtual void HandleAI()
+    {
+        // เช็คระยะเห็นผู้เล่น
+        inRange = Vector2.Distance(transform.position, player.position) <= attackRange;
 
         if (inRange)
         {
-            if (player.position.x > transform.position.x && facingLeft == true)
+            // หันหน้าเข้าหาผู้เล่น
+            if (player.position.x > transform.position.x && facingLeft)
             {
                 transform.eulerAngles = new Vector3(0f, -180f, 0f);
                 facingLeft = false;
             }
-            else if (player.position.x < transform.position.x && facingLeft == false)
+            else if (player.position.x < transform.position.x && !facingLeft)
             {
                 transform.eulerAngles = new Vector3(0f, 0f, 0f);
                 facingLeft = true;
             }
 
+            // วิ่งเข้าไปหา ถ้าไกลกว่า retrieveDistance
             if (Vector2.Distance(transform.position, player.position) > retrieveDistance)
             {
                 animator.SetBool("Attack 1", false);
-                transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    player.position,
+                    chaseSpeed * Time.deltaTime
+                );
             }
             else
             {
@@ -77,6 +99,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            // เดิน patrol
             transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
 
             RaycastHit2D hit = Physics2D.Raycast(checkPoint.position, Vector2.down, distance, layerMask);
@@ -85,7 +108,7 @@ public class Enemy : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 facingLeft = false;
             }
-            else if (hit == false && facingLeft == false)
+            else if (hit == false && !facingLeft)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 facingLeft = true;
@@ -93,43 +116,58 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Attack()
+    // ----------------- COMBAT -----------------
+    public virtual void Attack()
     {
+        if (attackPoint == null) return;
+
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if (collInfo)
         {
-            Player player = collInfo.gameObject.GetComponent<Player>();
-            if (player != null)
+            Player p = collInfo.gameObject.GetComponent<Player>();
+            if (p != null)
             {
-                player.TakeDamage(5);
+                p.TakeDamage(damage);
             }
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int dmg)
     {
         if (health == null) return;
-        health.TakeDamage(damage);
+        health.TakeDamage(dmg);
+        if (health.CurrentHealth > 0)
+        {
+            Hurt();
+        }
     }
-
-    private void OnDrawGizmosSelected()
+    public virtual void Hurt()
     {
-        if (checkPoint == null) return;
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(checkPoint.position, Vector2.down * distance);
+        Debug.Log($"{name} hurt.");
+    }
+    // ----------------- GIZMOS -----------------
+    protected virtual void OnDrawGizmosSelected()
+    {
+        if (checkPoint != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(checkPoint.position, Vector2.down * distance);
+        }
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
-        if (attackPoint == null) return;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }
     }
 
-    void Die()
+    // ----------------- DIE -----------------
+    public virtual void Die()
     {
-        Debug.Log(this.transform.name + " Died.");
-        Destroy(this.gameObject);
+        Debug.Log($"{name} died.");
+        Destroy(gameObject);
     }
 }

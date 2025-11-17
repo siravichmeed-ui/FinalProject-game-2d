@@ -6,7 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
-    public int currentCoin = 0;
+    public static int currentCoin = 0;
 
     [Header("Components")]
     public Animator animator;
@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private float movement;
     public float moveSpeed = 5f;
     private bool facingRight = true;
+
+    
 
     public Transform attackPoint;
     public float attackRadius = 1f;
@@ -108,7 +110,7 @@ public class Player : MonoBehaviour
             Enemy enemy = collInfo.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(5);
+                enemy.TakeDamage(10);
             }
         }
     }
@@ -125,6 +127,13 @@ public class Player : MonoBehaviour
     {
         if (health == null) return;
         health.TakeDamage(damage);
+        if (health.CurrentHealth > 0)
+        {
+            if (animator != null)
+            {
+                animator.SetTrigger("Hurt");   
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
