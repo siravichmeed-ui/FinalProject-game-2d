@@ -5,6 +5,9 @@ using UnityEngine;
 using TMPro;
 public class Player : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip swordSound;
+
     public TextMeshProUGUI coinText;
     public static int currentCoin = 0;
 
@@ -38,8 +41,12 @@ public class Player : MonoBehaviour
         {
             health.OnDied += Die;
         }
+        audioSource = GetComponent<AudioSource>();
     }
-
+    public void PlaySwordSound()
+    {
+        audioSource.PlayOneShot(swordSound);
+    }
     void OnDestroy()
     {
         if (health != null)

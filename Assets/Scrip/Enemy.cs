@@ -1,7 +1,7 @@
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] protected Health health;
@@ -138,13 +138,13 @@ public class Enemy : MonoBehaviour
         health.TakeDamage(dmg);
         if (health.CurrentHealth > 0)
         {
-            Hurt();
+            Hurt();     // เรียก abstract method
         }
     }
-    public virtual void Hurt()
-    {
-        Debug.Log($"{name} hurt.");
-    }
+
+    // ----- Abstract method (ข้อ 1) -----
+    public abstract void Hurt();   // ไม่มี body แล้ว ให้ subclass ทำเอง
+
     // ----------------- GIZMOS -----------------
     protected virtual void OnDrawGizmosSelected()
     {
