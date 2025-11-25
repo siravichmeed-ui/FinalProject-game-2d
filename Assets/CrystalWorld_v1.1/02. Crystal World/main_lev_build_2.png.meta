@@ -277,7 +277,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -291,7 +291,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -336,6 +336,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -343,10 +382,10 @@ TextureImporter:
       name: main_lev_build_2_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 927
-        width: 34
-        height: 82
+        x: 144
+        y: 928
+        width: 32
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +404,10 @@ TextureImporter:
       name: main_lev_build_2_1
       rect:
         serializedVersion: 2
-        x: 191
-        y: 943
-        width: 66
-        height: 66
+        x: 192
+        y: 944
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,10 +426,10 @@ TextureImporter:
       name: main_lev_build_2_2
       rect:
         serializedVersion: 2
-        x: 271
-        y: 946
-        width: 34
-        height: 63
+        x: 272
+        y: 947
+        width: 32
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +448,10 @@ TextureImporter:
       name: main_lev_build_2_3
       rect:
         serializedVersion: 2
-        x: 319
-        y: 952
-        width: 34
-        height: 57
+        x: 320
+        y: 953
+        width: 32
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,10 +470,10 @@ TextureImporter:
       name: main_lev_build_2_4
       rect:
         serializedVersion: 2
-        x: 367
-        y: 952
-        width: 34
-        height: 57
+        x: 368
+        y: 953
+        width: 32
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,10 +492,10 @@ TextureImporter:
       name: main_lev_build_2_5
       rect:
         serializedVersion: 2
-        x: 415
-        y: 946
-        width: 34
-        height: 63
+        x: 416
+        y: 947
+        width: 32
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +514,10 @@ TextureImporter:
       name: main_lev_build_2_6
       rect:
         serializedVersion: 2
-        x: 463
-        y: 943
-        width: 66
-        height: 66
+        x: 464
+        y: 944
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,10 +536,10 @@ TextureImporter:
       name: main_lev_build_2_7
       rect:
         serializedVersion: 2
-        x: 543
-        y: 927
-        width: 34
-        height: 82
+        x: 544
+        y: 928
+        width: 32
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,10 +558,10 @@ TextureImporter:
       name: main_lev_build_2_8
       rect:
         serializedVersion: 2
-        x: 769
-        y: 719
-        width: 206
-        height: 290
+        x: 770
+        y: 720
+        width: 204
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +580,10 @@ TextureImporter:
       name: main_lev_build_2_9
       rect:
         serializedVersion: 2
-        x: 79
-        y: 927
-        width: 18
-        height: 18
+        x: 80
+        y: 928
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -563,10 +602,10 @@ TextureImporter:
       name: main_lev_build_2_10
       rect:
         serializedVersion: 2
-        x: 111
-        y: 927
-        width: 18
-        height: 18
+        x: 112
+        y: 928
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -585,10 +624,10 @@ TextureImporter:
       name: main_lev_build_2_11
       rect:
         serializedVersion: 2
-        x: 591
-        y: 927
-        width: 18
-        height: 18
+        x: 592
+        y: 928
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,10 +646,10 @@ TextureImporter:
       name: main_lev_build_2_12
       rect:
         serializedVersion: 2
-        x: 623
-        y: 927
-        width: 18
-        height: 18
+        x: 624
+        y: 928
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -629,10 +668,10 @@ TextureImporter:
       name: main_lev_build_2_13
       rect:
         serializedVersion: 2
-        x: 15
-        y: 879
-        width: 82
-        height: 34
+        x: 16
+        y: 880
+        width: 80
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -651,10 +690,10 @@ TextureImporter:
       name: main_lev_build_2_14
       rect:
         serializedVersion: 2
-        x: 143
-        y: 879
-        width: 34
-        height: 34
+        x: 144
+        y: 880
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -673,10 +712,10 @@ TextureImporter:
       name: main_lev_build_2_15
       rect:
         serializedVersion: 2
-        x: 623
-        y: 879
-        width: 82
-        height: 34
+        x: 624
+        y: 880
+        width: 80
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -695,10 +734,10 @@ TextureImporter:
       name: main_lev_build_2_16
       rect:
         serializedVersion: 2
-        x: 15
-        y: 799
-        width: 66
-        height: 66
+        x: 16
+        y: 800
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -717,10 +756,10 @@ TextureImporter:
       name: main_lev_build_2_17
       rect:
         serializedVersion: 2
-        x: 639
-        y: 799
-        width: 66
-        height: 66
+        x: 640
+        y: 800
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -739,10 +778,10 @@ TextureImporter:
       name: main_lev_build_2_18
       rect:
         serializedVersion: 2
-        x: 15
-        y: 751
-        width: 63
-        height: 34
+        x: 16
+        y: 752
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +800,10 @@ TextureImporter:
       name: main_lev_build_2_19
       rect:
         serializedVersion: 2
-        x: 642
-        y: 751
-        width: 63
-        height: 34
+        x: 643
+        y: 752
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -783,10 +822,10 @@ TextureImporter:
       name: main_lev_build_2_20
       rect:
         serializedVersion: 2
-        x: 15
-        y: 703
-        width: 57
-        height: 34
+        x: 16
+        y: 704
+        width: 55
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -805,10 +844,10 @@ TextureImporter:
       name: main_lev_build_2_21
       rect:
         serializedVersion: 2
-        x: 648
-        y: 703
-        width: 57
-        height: 34
+        x: 649
+        y: 704
+        width: 55
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -827,10 +866,10 @@ TextureImporter:
       name: main_lev_build_2_22
       rect:
         serializedVersion: 2
-        x: 15
-        y: 655
-        width: 57
-        height: 34
+        x: 16
+        y: 656
+        width: 55
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -849,10 +888,10 @@ TextureImporter:
       name: main_lev_build_2_23
       rect:
         serializedVersion: 2
-        x: 648
-        y: 655
-        width: 57
-        height: 34
+        x: 649
+        y: 656
+        width: 55
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -871,10 +910,10 @@ TextureImporter:
       name: main_lev_build_2_24
       rect:
         serializedVersion: 2
-        x: 800
-        y: 447
-        width: 160
-        height: 242
+        x: 801
+        y: 448
+        width: 158
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -893,10 +932,10 @@ TextureImporter:
       name: main_lev_build_2_25
       rect:
         serializedVersion: 2
-        x: 15
-        y: 607
-        width: 63
-        height: 34
+        x: 16
+        y: 608
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -915,10 +954,10 @@ TextureImporter:
       name: main_lev_build_2_26
       rect:
         serializedVersion: 2
-        x: 642
-        y: 607
-        width: 63
-        height: 34
+        x: 643
+        y: 608
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -937,10 +976,10 @@ TextureImporter:
       name: main_lev_build_2_27
       rect:
         serializedVersion: 2
-        x: 15
-        y: 527
-        width: 66
-        height: 66
+        x: 16
+        y: 528
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -959,10 +998,10 @@ TextureImporter:
       name: main_lev_build_2_28
       rect:
         serializedVersion: 2
-        x: 639
-        y: 527
-        width: 66
-        height: 66
+        x: 640
+        y: 528
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -981,10 +1020,10 @@ TextureImporter:
       name: main_lev_build_2_29
       rect:
         serializedVersion: 2
-        x: 15
-        y: 463
-        width: 82
-        height: 50
+        x: 16
+        y: 464
+        width: 80
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1003,10 +1042,10 @@ TextureImporter:
       name: main_lev_build_2_30
       rect:
         serializedVersion: 2
-        x: 111
-        y: 463
-        width: 18
-        height: 18
+        x: 112
+        y: 464
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1025,10 +1064,10 @@ TextureImporter:
       name: main_lev_build_2_31
       rect:
         serializedVersion: 2
-        x: 143
-        y: 383
-        width: 34
-        height: 82
+        x: 144
+        y: 384
+        width: 32
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1047,10 +1086,10 @@ TextureImporter:
       name: main_lev_build_2_32
       rect:
         serializedVersion: 2
-        x: 543
-        y: 383
-        width: 34
-        height: 82
+        x: 544
+        y: 384
+        width: 32
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1069,10 +1108,10 @@ TextureImporter:
       name: main_lev_build_2_33
       rect:
         serializedVersion: 2
-        x: 591
-        y: 463
-        width: 18
-        height: 18
+        x: 592
+        y: 464
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1091,10 +1130,10 @@ TextureImporter:
       name: main_lev_build_2_34
       rect:
         serializedVersion: 2
-        x: 623
-        y: 463
-        width: 82
-        height: 50
+        x: 624
+        y: 464
+        width: 80
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1113,10 +1152,10 @@ TextureImporter:
       name: main_lev_build_2_35
       rect:
         serializedVersion: 2
-        x: 191
-        y: 383
-        width: 66
-        height: 66
+        x: 192
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1135,10 +1174,10 @@ TextureImporter:
       name: main_lev_build_2_36
       rect:
         serializedVersion: 2
-        x: 271
-        y: 383
-        width: 34
-        height: 63
+        x: 272
+        y: 384
+        width: 32
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1157,10 +1196,10 @@ TextureImporter:
       name: main_lev_build_2_37
       rect:
         serializedVersion: 2
-        x: 319
-        y: 383
-        width: 34
-        height: 57
+        x: 320
+        y: 384
+        width: 32
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1179,10 +1218,10 @@ TextureImporter:
       name: main_lev_build_2_38
       rect:
         serializedVersion: 2
-        x: 367
-        y: 383
-        width: 34
-        height: 57
+        x: 368
+        y: 384
+        width: 32
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1201,10 +1240,10 @@ TextureImporter:
       name: main_lev_build_2_39
       rect:
         serializedVersion: 2
-        x: 415
-        y: 383
-        width: 34
-        height: 63
+        x: 416
+        y: 384
+        width: 32
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1223,10 +1262,10 @@ TextureImporter:
       name: main_lev_build_2_40
       rect:
         serializedVersion: 2
-        x: 463
-        y: 383
-        width: 66
-        height: 66
+        x: 464
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1245,10 +1284,10 @@ TextureImporter:
       name: main_lev_build_2_41
       rect:
         serializedVersion: 2
-        x: 784
-        y: 271
-        width: 206
-        height: 162
+        x: 785
+        y: 272
+        width: 204
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1267,10 +1306,10 @@ TextureImporter:
       name: main_lev_build_2_42
       rect:
         serializedVersion: 2
-        x: 31
-        y: 255
-        width: 34
-        height: 50
+        x: 32
+        y: 256
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1289,10 +1328,10 @@ TextureImporter:
       name: main_lev_build_2_43
       rect:
         serializedVersion: 2
-        x: 64
-        y: 283
-        width: 33
-        height: 38
+        x: 65
+        y: 284
+        width: 31
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1311,10 +1350,10 @@ TextureImporter:
       name: main_lev_build_2_44
       rect:
         serializedVersion: 2
-        x: 111
-        y: 271
-        width: 34
-        height: 34
+        x: 112
+        y: 272
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1333,10 +1372,10 @@ TextureImporter:
       name: main_lev_build_2_45
       rect:
         serializedVersion: 2
-        x: 159
-        y: 276
-        width: 34
-        height: 29
+        x: 160
+        y: 277
+        width: 32
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1355,10 +1394,10 @@ TextureImporter:
       name: main_lev_build_2_46
       rect:
         serializedVersion: 2
-        x: 207
-        y: 256
-        width: 50
-        height: 49
+        x: 208
+        y: 257
+        width: 48
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1377,10 +1416,10 @@ TextureImporter:
       name: main_lev_build_2_47
       rect:
         serializedVersion: 2
-        x: 271
-        y: 243
-        width: 18
-        height: 62
+        x: 272
+        y: 244
+        width: 16
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1399,10 +1438,10 @@ TextureImporter:
       name: main_lev_build_2_48
       rect:
         serializedVersion: 2
-        x: 303
-        y: 241
-        width: 18
-        height: 48
+        x: 304
+        y: 242
+        width: 16
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1421,10 +1460,10 @@ TextureImporter:
       name: main_lev_build_2_49
       rect:
         serializedVersion: 2
-        x: 335
-        y: 241
-        width: 34
-        height: 48
+        x: 336
+        y: 242
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1443,10 +1482,10 @@ TextureImporter:
       name: main_lev_build_2_50
       rect:
         serializedVersion: 2
-        x: 383
-        y: 241
-        width: 34
-        height: 48
+        x: 384
+        y: 242
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1465,10 +1504,10 @@ TextureImporter:
       name: main_lev_build_2_51
       rect:
         serializedVersion: 2
-        x: 431
-        y: 241
-        width: 18
-        height: 48
+        x: 432
+        y: 242
+        width: 16
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1487,10 +1526,10 @@ TextureImporter:
       name: main_lev_build_2_52
       rect:
         serializedVersion: 2
-        x: 463
-        y: 243
-        width: 18
-        height: 62
+        x: 464
+        y: 244
+        width: 16
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1509,10 +1548,10 @@ TextureImporter:
       name: main_lev_build_2_53
       rect:
         serializedVersion: 2
-        x: 495
-        y: 256
-        width: 50
-        height: 49
+        x: 496
+        y: 257
+        width: 48
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1531,10 +1570,10 @@ TextureImporter:
       name: main_lev_build_2_54
       rect:
         serializedVersion: 2
-        x: 559
-        y: 276
-        width: 34
-        height: 29
+        x: 560
+        y: 277
+        width: 32
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1553,10 +1592,10 @@ TextureImporter:
       name: main_lev_build_2_55
       rect:
         serializedVersion: 2
-        x: 607
-        y: 271
-        width: 34
-        height: 34
+        x: 608
+        y: 272
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1575,10 +1614,10 @@ TextureImporter:
       name: main_lev_build_2_56
       rect:
         serializedVersion: 2
-        x: 655
-        y: 283
-        width: 33
-        height: 38
+        x: 656
+        y: 284
+        width: 31
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1597,10 +1636,10 @@ TextureImporter:
       name: main_lev_build_2_57
       rect:
         serializedVersion: 2
-        x: 687
-        y: 255
-        width: 34
-        height: 50
+        x: 688
+        y: 256
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1619,10 +1658,10 @@ TextureImporter:
       name: main_lev_build_2_58
       rect:
         serializedVersion: 2
-        x: 31
-        y: 223
-        width: 18
-        height: 23
+        x: 32
+        y: 224
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1641,10 +1680,10 @@ TextureImporter:
       name: main_lev_build_2_59
       rect:
         serializedVersion: 2
-        x: 79
-        y: 223
-        width: 34
-        height: 34
+        x: 80
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1663,10 +1702,10 @@ TextureImporter:
       name: main_lev_build_2_60
       rect:
         serializedVersion: 2
-        x: 367
-        y: 225
-        width: 18
-        height: 16
+        x: 368
+        y: 226
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1685,10 +1724,10 @@ TextureImporter:
       name: main_lev_build_2_61
       rect:
         serializedVersion: 2
-        x: 703
-        y: 223
-        width: 18
-        height: 23
+        x: 704
+        y: 224
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1707,10 +1746,10 @@ TextureImporter:
       name: main_lev_build_2_62
       rect:
         serializedVersion: 2
-        x: 793
-        y: 16
-        width: 206
-        height: 226
+        x: 794
+        y: 17
+        width: 204
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1729,10 +1768,10 @@ TextureImporter:
       name: main_lev_build_2_63
       rect:
         serializedVersion: 2
-        x: 15
-        y: 127
-        width: 34
-        height: 86
+        x: 16
+        y: 128
+        width: 32
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1751,10 +1790,10 @@ TextureImporter:
       name: main_lev_build_2_64
       rect:
         serializedVersion: 2
-        x: 703
-        y: 127
-        width: 34
-        height: 86
+        x: 704
+        y: 128
+        width: 32
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1773,10 +1812,10 @@ TextureImporter:
       name: main_lev_build_2_65
       rect:
         serializedVersion: 2
-        x: 15
-        y: 63
-        width: 18
-        height: 54
+        x: 16
+        y: 64
+        width: 16
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1795,10 +1834,10 @@ TextureImporter:
       name: main_lev_build_2_66
       rect:
         serializedVersion: 2
-        x: 47
-        y: 63
-        width: 18
-        height: 50
+        x: 48
+        y: 64
+        width: 16
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1817,10 +1856,10 @@ TextureImporter:
       name: main_lev_build_2_67
       rect:
         serializedVersion: 2
-        x: 79
-        y: 47
-        width: 34
-        height: 54
+        x: 80
+        y: 48
+        width: 32
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1839,10 +1878,10 @@ TextureImporter:
       name: main_lev_build_2_68
       rect:
         serializedVersion: 2
-        x: 127
-        y: 15
-        width: 34
-        height: 69
+        x: 128
+        y: 16
+        width: 32
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1861,10 +1900,10 @@ TextureImporter:
       name: main_lev_build_2_69
       rect:
         serializedVersion: 2
-        x: 591
-        y: 15
-        width: 34
-        height: 69
+        x: 592
+        y: 16
+        width: 32
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1883,10 +1922,10 @@ TextureImporter:
       name: main_lev_build_2_70
       rect:
         serializedVersion: 2
-        x: 639
-        y: 47
-        width: 34
-        height: 54
+        x: 640
+        y: 48
+        width: 32
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1905,10 +1944,10 @@ TextureImporter:
       name: main_lev_build_2_71
       rect:
         serializedVersion: 2
-        x: 687
-        y: 63
-        width: 18
-        height: 50
+        x: 688
+        y: 64
+        width: 16
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1927,10 +1966,10 @@ TextureImporter:
       name: main_lev_build_2_72
       rect:
         serializedVersion: 2
-        x: 718
-        y: 63
-        width: 19
-        height: 54
+        x: 719
+        y: 64
+        width: 17
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1949,10 +1988,10 @@ TextureImporter:
       name: main_lev_build_2_73
       rect:
         serializedVersion: 2
-        x: 223
-        y: 15
-        width: 34
-        height: 39
+        x: 224
+        y: 16
+        width: 32
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1971,10 +2010,10 @@ TextureImporter:
       name: main_lev_build_2_74
       rect:
         serializedVersion: 2
-        x: 271
-        y: 15
-        width: 34
-        height: 39
+        x: 272
+        y: 16
+        width: 32
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1993,10 +2032,10 @@ TextureImporter:
       name: main_lev_build_2_75
       rect:
         serializedVersion: 2
-        x: 319
-        y: 15
-        width: 18
-        height: 40
+        x: 320
+        y: 16
+        width: 16
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2015,10 +2054,10 @@ TextureImporter:
       name: main_lev_build_2_76
       rect:
         serializedVersion: 2
-        x: 351
-        y: 15
-        width: 18
-        height: 39
+        x: 352
+        y: 16
+        width: 16
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2037,10 +2076,10 @@ TextureImporter:
       name: main_lev_build_2_77
       rect:
         serializedVersion: 2
-        x: 383
-        y: 15
-        width: 18
-        height: 38
+        x: 384
+        y: 16
+        width: 16
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2059,10 +2098,10 @@ TextureImporter:
       name: main_lev_build_2_78
       rect:
         serializedVersion: 2
-        x: 415
-        y: 15
-        width: 34
-        height: 39
+        x: 416
+        y: 16
+        width: 32
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2081,10 +2120,10 @@ TextureImporter:
       name: main_lev_build_2_79
       rect:
         serializedVersion: 2
-        x: 463
-        y: 15
-        width: 18
-        height: 38
+        x: 464
+        y: 16
+        width: 16
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2103,10 +2142,10 @@ TextureImporter:
       name: main_lev_build_2_80
       rect:
         serializedVersion: 2
-        x: 495
-        y: 31
-        width: 18
-        height: 22
+        x: 496
+        y: 32
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2125,7 +2164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c3c3ac4dac1b7264a922fde3ca8ec7e1
     internalID: 0
     vertices: []
     indices: 

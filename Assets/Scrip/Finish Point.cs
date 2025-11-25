@@ -1,46 +1,68 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class FinishPoint : MonoBehaviour
 {
-    public GameObject finishUI;              // Panel UI
-    public TextMeshProUGUI textRequired;     // ��ͤ���� UI
+    [Header("UI When Not Enough Coins")]
+    public GameObject notEnoughUI;
+    public TextMeshProUGUI textNotEnough;
+
+    [Header("UI When Win")]
+    public GameObject winUI;
 
     private void Start()
     {
-        if (finishUI != null)
-            finishUI.SetActive(false);
+        if (notEnoughUI != null) notEnoughUI.SetActive(false);
+        if (winUI != null) winUI.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
-
-        // ��� Player �Ҩҡ Collider
+        // หา Player
         Player player = collision.GetComponent<Player>();
+        if (player == null)
+            player = collision.GetComponentInParent<Player>();
         if (player == null) return;
 
-        // �ѻവ��ͤ���� UI
-        if (textRequired != null)   
+        int required = GameManager.Instance.coinRequired;
+        int current = Player.currentCoin;
+
+        // ---------------------------
+        //  ถ้าเหรียญไม่ถึง
+        // ---------------------------
+        if (current < required)
         {
-            textRequired.text =
-                $"��ͧ�������­: {GameManager.Instance.coinRequired}\n" +
-                $"�Ѩ�غѹ: {Player.currentCoin}";
+            Debug.Log("ยังไม่ถึงเหรียญพอ แสดง UI แบบยังไม่ถึง");
+
+            if (textNotEnough != null)
+                textNotEnough.text = $"NEED {required} Coin\nYou Have {current} Coin";
+
+            if (notEnoughUI != null)
+                notEnoughUI.SetActive(true);
+
+            return;
         }
 
-        // �Դ UI
-        if (finishUI != null)
-            finishUI.SetActive(true);
+        // ---------------------------
+        //  ถ้าเหรียญครบแล้ว → WIN
+        // ---------------------------
+        Debug.Log("เหรียญครบ! แสดง Win UI");
 
-        // �ͧ����Ҫ�������
-        GameManager.Instance.Finish(Player.currentCoin);
+        if (winUI != null)
+            winUI.SetActive(true);
+
+        // เรียกฟังก์ชันชนะจาก GameManager
+        GameManager.Instance.Finish(current);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+        Player player = collision.GetComponent<Player>();
+        if (player == null)
+            player = collision.GetComponentInParent<Player>();
+        if (player == null) return;
 
-        if (finishUI != null)
-            finishUI.SetActive(false);
+        if (notEnoughUI != null) notEnoughUI.SetActive(false);
+        if (winUI != null) winUI.SetActive(false);
     }
 }

@@ -1,4 +1,4 @@
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 using UnityEngine;
@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     private bool facingRight = true;
 
-    
-
     public Transform attackPoint;
     public float attackRadius = 1f;
     public LayerMask attackLayer;
@@ -43,10 +41,12 @@ public class Player : MonoBehaviour
         }
         audioSource = GetComponent<AudioSource>();
     }
+
     public void PlaySwordSound()
     {
         audioSource.PlayOneShot(swordSound);
     }
+
     void OnDestroy()
     {
         if (health != null)
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
         {
             if (animator != null)
             {
-                animator.SetTrigger("Hurt");   
+                animator.SetTrigger("Hurt");
             }
         }
     }
@@ -155,8 +155,22 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Die");
-        FindAnyObjectByType<GameManager>().isGameActive = false;
-        Destroy(this.gameObject);
+        Debug.Log("Player Die");
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.GameOver();
+            currentCoin = 0;
+        }
+        else
+        {
+            Debug.LogWarning("ไม่เจอ GameManager ในฉาก!");
+        }
+
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
+
     }
 }
