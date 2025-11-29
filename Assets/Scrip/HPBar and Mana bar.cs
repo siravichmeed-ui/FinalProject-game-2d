@@ -24,7 +24,7 @@ public class HPBarandManabar : MonoBehaviour
 
     [Header("Regen")]
     public bool Regenerate = true;
-    public float regen = 0.1f;
+    public float regen = 0.2f;
     private float timeleft = 0.0f;
     public float regenUpdateInterval = 1f;
 
