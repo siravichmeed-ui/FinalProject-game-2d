@@ -15,11 +15,9 @@ public class Skeleton : Enemy
 
         isHurting = true;
 
-        // ถ้ามี Animation Hurt
         if (animator != null)
             animator.SetTrigger("Hurt");
 
-        // หยุดขยับชั่วคราว จะได้เห็น Hurt ชัดเจน
         StartCoroutine(HurtRoutine());
     }
 

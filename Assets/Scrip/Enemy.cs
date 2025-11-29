@@ -30,7 +30,6 @@ public abstract class Enemy : MonoBehaviour
 
     protected bool inRange = false;
 
-    // ----------------- LIFE CYCLE -----------------
     protected virtual void Awake()
     {
         if (health == null)
@@ -62,15 +61,12 @@ public abstract class Enemy : MonoBehaviour
         HandleAI();
     }
 
-    // ----------------- AI LOGIC -----------------
     protected virtual void HandleAI()
     {
-        // เช็คระยะเห็นผู้เล่น
         inRange = Vector2.Distance(transform.position, player.position) <= attackRange;
 
         if (inRange)
         {
-            // หันหน้าเข้าหาผู้เล่น
             if (player.position.x > transform.position.x && facingLeft)
             {
                 transform.eulerAngles = new Vector3(0f, -180f, 0f);
@@ -82,7 +78,6 @@ public abstract class Enemy : MonoBehaviour
                 facingLeft = true;
             }
 
-            // วิ่งเข้าไปหา ถ้าไกลกว่า retrieveDistance
             if (Vector2.Distance(transform.position, player.position) > retrieveDistance)
             {
                 animator.SetBool("Attack 1", false);
@@ -99,7 +94,6 @@ public abstract class Enemy : MonoBehaviour
         }
         else
         {
-            // เดิน patrol
             transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
 
             RaycastHit2D hit = Physics2D.Raycast(checkPoint.position, Vector2.down, distance, layerMask);
@@ -116,7 +110,6 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    // ----------------- COMBAT -----------------
     public virtual void Attack()
     {
         if (attackPoint == null) return;
@@ -138,14 +131,12 @@ public abstract class Enemy : MonoBehaviour
         health.TakeDamage(dmg);
         if (health.CurrentHealth > 0)
         {
-            Hurt();     // เรียก abstract method
+            Hurt();
         }
     }
 
-    // ----- Abstract method (ข้อ 1) -----
-    public abstract void Hurt();   // ไม่มี body แล้ว ให้ subclass ทำเอง
+    public abstract void Hurt();
 
-    // ----------------- GIZMOS -----------------
     protected virtual void OnDrawGizmosSelected()
     {
         if (checkPoint != null)
@@ -164,7 +155,6 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    // ----------------- DIE -----------------
     public virtual void Die()
     {
         Debug.Log($"{name} died.");

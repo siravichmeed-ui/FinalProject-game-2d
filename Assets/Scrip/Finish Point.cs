@@ -18,7 +18,6 @@ public class FinishPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // หา Player
         Player player = collision.GetComponent<Player>();
         if (player == null)
             player = collision.GetComponentInParent<Player>();
@@ -27,9 +26,6 @@ public class FinishPoint : MonoBehaviour
         int required = GameManager.Instance.coinRequired;
         int current = Player.currentCoin;
 
-        // ---------------------------
-        //  ถ้าเหรียญไม่ถึง
-        // ---------------------------
         if (current < required)
         {
             Debug.Log("ยังไม่ถึงเหรียญพอ แสดง UI แบบยังไม่ถึง");
@@ -43,15 +39,11 @@ public class FinishPoint : MonoBehaviour
             return;
         }
 
-        // ---------------------------
-        //  ถ้าเหรียญครบแล้ว → WIN
-        // ---------------------------
         Debug.Log("เหรียญครบ! แสดง Win UI");
 
         if (winUI != null)
             winUI.SetActive(true);
 
-        // เรียกฟังก์ชันชนะจาก GameManager
         GameManager.Instance.Finish(current);
     }
 

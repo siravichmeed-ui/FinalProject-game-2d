@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("UI")]
-    public GameObject gameOverUI;   // หน้าตาย
-    public GameObject winUI;        // หน้า Win (Finish แล้วเหรียญครบ)
+    public GameObject gameOverUI;
+    public GameObject winUI;
 
     [Header("Win Condition")]
     public int coinRequired = 14;
@@ -46,19 +46,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ---------- GAME OVER ----------
     public void GameOver()
     {
         isGameActive = false;
         if (gameOverUI != null) gameOverUI.SetActive(true);
     }
 
-    // ---------- WIN ----------
     public void Finish(int currentCoin)
     {
         if (!isGameActive) return;
 
-        // ถ้าเหรียญไม่ถึงยังไม่ให้ชนะ
         if (currentCoin < coinRequired)
         {
             Debug.Log($"ยังชนะไม่ได้ เหรียญ {currentCoin}/{coinRequired}");
@@ -70,22 +67,21 @@ public class GameManager : MonoBehaviour
         if (winUI != null) winUI.SetActive(true);
     }
 
-    // ---------- ปุ่ม UI ----------
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main Menu"); // เปลี่ยนชื่อให้ตรงกับฉากจริง
+        SceneManager.LoadScene("Main Menu");
     }
 
-     public void NextLevel()
+    public void NextLevel()
     {
         SceneManager.LoadScene("Level2");
     }
+
     public void Quit()
     {
         Application.Quit();

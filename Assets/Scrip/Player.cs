@@ -5,9 +5,10 @@ using UnityEngine;
 using TMPro;
 public class Player : MonoBehaviour
 {
+    
+    public AudioClip coinSound;
     public AudioSource audioSource;
     public AudioClip swordSound;
-
     public TextMeshProUGUI coinText;
     public static int currentCoin = 0;
 
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (health != null)
         {
             health.OnDied += Die;
@@ -147,8 +149,10 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
+            audioSource.volume = 0.1f;
             currentCoin++;
             other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected");
+            audioSource.PlayOneShot(coinSound);
             Destroy(other.gameObject, 1f);
         }
     }
@@ -171,6 +175,5 @@ public class Player : MonoBehaviour
         {
             animator.SetTrigger("Die");
         }
-
     }
 }

@@ -8,7 +8,7 @@ public class HPBarandManabar : MonoBehaviour
     public static HPBarandManabar Instance { get; private set; }
 
     [Header("Target")]
-    [SerializeField] private Health targetHealth;   // ผูกกับ Health ของ Player ใน Inspector
+    [SerializeField] private Health targetHealth;
 
     [Header("Health UI")]
     public Image currentHealthBar;
@@ -39,7 +39,6 @@ public class HPBarandManabar : MonoBehaviour
     {
         if (targetHealth != null)
         {
-            // subscribe event
             targetHealth.OnHealthChanged += OnHealthChanged;
             OnHealthChanged(targetHealth.CurrentHealth, targetHealth.MaxHealth);
         }
@@ -68,7 +67,7 @@ public class HPBarandManabar : MonoBehaviour
         {
             if (GodMode)
             {
-                targetHealth.Heal(targetHealth.MaxHealth); // เต็มเลือด
+                targetHealth.Heal(targetHealth.MaxHealth);
                 RestoreMana(maxManaPoint);
             }
             else
@@ -81,7 +80,6 @@ public class HPBarandManabar : MonoBehaviour
         }
     }
 
-    // callback ตอน HP เปลี่ยน
     private void OnHealthChanged(float current, float max)
     {
         UpdateHealthBar(current, max);
@@ -106,7 +104,6 @@ public class HPBarandManabar : MonoBehaviour
         healthText.text = hp.ToString("0") + "/" + maxHp.ToString("0");
     }
 
-    // ---------- Mana ----------
     private void UpdateManaBar()
     {
         float ratio = manaPoint / maxManaPoint;
@@ -115,12 +112,9 @@ public class HPBarandManabar : MonoBehaviour
         manaText.text = manaPoint.ToString("0") + "/" + maxManaPoint.ToString("0");
     }
 
-    
-
     private void UpdateManaUI()
     {
         UpdateManaBar();
-        
     }
 
     public void UseMana(float Mana)

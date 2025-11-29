@@ -16,7 +16,6 @@ public class Dragon : Enemy
 
         float distance = Vector2.Distance(transform.position, player.position);
 
-        // หันหน้าเข้าหาผู้เล่น
         if (player.position.x > transform.position.x && facingLeft)
         {
             transform.eulerAngles = new Vector3(0f, -180f, 0f);
@@ -28,21 +27,18 @@ public class Dragon : Enemy
             facingLeft = true;
         }
 
-        // ระยะไกล → เดินหา
         if (distance > fireRange)
         {
-            base.HandleAI();   // ใช้การเดินไล่ของ Enemy เดิม
+            base.HandleAI();
             return;
         }
 
-        // ระยะกลาง → ยิงไฟ
         if (Time.time - lastFireTime >= fireCooldown)
         {
             lastFireTime = Time.time;
             ShootFireball();
         }
 
-        // ระยะใกล้ → ตีปกติ
         if (distance <= retrieveDistance)
         {
             animator.SetBool("Attack 1", true);
@@ -57,7 +53,7 @@ public class Dragon : Enemy
     {
         if (fireballPrefab == null || firePoint == null) return;
 
-        animator.SetTrigger("Cast");   // ต้องมี animation "Cast"
+        animator.SetTrigger("Cast");
 
         Vector2 dir = (player.position - firePoint.position).normalized;
 

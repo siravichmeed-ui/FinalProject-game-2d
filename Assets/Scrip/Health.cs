@@ -42,7 +42,6 @@ public class Health : MonoBehaviour
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
     }
 
-    // เพิ่ม Max เป็น %
     public void IncreaseMaxHealthPercent(float percent)
     {
         maxHealth += maxHealth * (percent / 100f);
